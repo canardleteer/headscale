@@ -22,7 +22,9 @@ mkdir -p ./headscale/config
 cd ./headscale
 ```
 
-2. **(Strongly Recommended)** Download a copy of the [example configuration](https://github.com/juanfont/headscale/blob/main/config-example.yaml) from the headscale repository.
+!!! warning "Strongly Recommended"
+
+    Download a copy of the [example configuration](https://github.com/juanfont/headscale/blob/main/config-example.yaml) from the headscale repository.
 
 The following instructions are for running against `headscale/headscale:latest`, if you are using an older version, you will want to make sure you're getting the correct version of a default configuration file from the [tags](https://github.com/juanfont/headscale/tags) matching your version.
 
@@ -36,12 +38,6 @@ Using curl:
 
 ```shell
 curl https://raw.githubusercontent.com/juanfont/headscale/main/config-example.yaml -o ./config/config.yaml
-```
-
-**(Advanced)** If you would like to hand craft a config file **instead** of downloading the example config file, create a blank `headscale` configuration in the headscale directory to edit:
-
-```shell
-touch ./config/config.yaml
 ```
 
 Modify the config file to your preferences before launching Docker container.
@@ -71,6 +67,14 @@ database.sqlite.path: /etc/headscale/db.sqlite
 Alternatively, you can mount `/var/lib` and `/var/run` from your host system by adding
 `--volume $(pwd)/lib:/var/lib/headscale` and `--volume $(pwd)/run:/var/run/headscale`
 in the next step.
+
+!!! example "Advanced"
+
+    If you would like to hand craft a config file **instead** of downloading the example config file, create a blank `headscale` configuration in the headscale directory to edit:
+
+    ```shell
+    touch ./config/config.yaml
+    ```
 
 4. Start the headscale server while working in the host headscale directory:
 
