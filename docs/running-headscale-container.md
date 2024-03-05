@@ -72,9 +72,9 @@ in the next step.
 
     If you would like to hand craft a config file **instead** of downloading the example config file, create a blank `headscale` configuration in the headscale directory to edit:
 
-    ```shell
-    touch ./config/config.yaml
-    ```
+```shell
+touch ./config/config.yaml
+```
 
 4. Start the headscale server while working in the host headscale directory:
 
